@@ -7,11 +7,6 @@ export default defineConfig({
     laravel({
       input: "resources/js/app.jsx",
       refresh: true,
-      hmrOptions: {
-        protocol: "ws",
-        host: window.location.hostname,
-        port: window.location.port,
-      },
     }),
     react(),
   ],
