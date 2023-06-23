@@ -52,7 +52,8 @@ class RegisteredUserController extends Controller
         // Make the POST request to the backend API
         $client = new Client();
         try {
-            $response = $client->post('http://localhost:3000/users', [
+            $apiUrl = env('API_URL');
+            $response = $client->post($apiUrl . 'users', [
                 'json' => ['email' => $request->email],
             ]);
 
