@@ -10,7 +10,7 @@ class GameApi
 
     public static function all()
     {
-        $games = Cache::remember('all_games', 3600, function () {
+        $games = Cache::remember('all_games', 360, function () {
             $client = new Client();
             $apiUrl = env('API_URL');
             $response = $client->get($apiUrl . 'games');
@@ -30,7 +30,7 @@ class GameApi
 
     public static function history()
     {
-        $games = Cache::remember('history_games', 3600, function () {
+        $games = Cache::remember('history_games', 360, function () {
             $client = new Client();
             $apiUrl = env('API_URL');
             $response = $client->get($apiUrl . 'games/history');
