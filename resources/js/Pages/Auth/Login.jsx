@@ -23,7 +23,11 @@ export default function Login({ status, canResetPassword }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('login'));
+        const headers = {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+        };
+
+        post(route('login'), {}, { headers });
     };
 
     return (
