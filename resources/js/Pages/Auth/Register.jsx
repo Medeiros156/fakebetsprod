@@ -5,7 +5,6 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
-import axios from 'axios';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -24,7 +23,7 @@ export default function Register() {
     const submit = (e) => {
         e.preventDefault();
 
-        axios.post(route('register'));
+        post(route('register'));
     };
 
     return (
